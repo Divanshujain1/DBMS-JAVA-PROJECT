@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Citizens</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="card">
+    <h1>Citizens</h1>
+    <table>
+      <thead><tr><th>ID</th><th>Name</th><th>PAN (masked)</th><th>Aadhaar (masked)</th></tr></thead>
+      <tbody>
+        <tr th:each="c : ${citizens}">
+          <td th:text="${c.id}">1</td>
+          <td th:text="${c.fullName}">John</td>
+          <td th:text="${c.panMasked}">****1234</td>
+          <td th:text="${c.aadhaarMasked}">****1234</td>
+        </tr>
+      </tbody>
+    </table>
+    <div><a href="/">Add another</a></div>
+  </div>
+</body>
+</html>

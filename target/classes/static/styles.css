@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; background:#f4f6f8; padding:20px; }
+.card { background: white; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); max-width:700px; margin:auto; }
+label { display:block; margin-top:10px; }
+input { width:100%; padding:8px; margin-top:4px; box-sizing:border-box;}
+button { margin-top:12px; padding:10px 16px; border-radius:6px; cursor:pointer;}
+table { width:100%; border-collapse:collapse; margin-top:12px; }
+th, td { text-align:left; padding:8px; border-bottom:1px solid #eee; }

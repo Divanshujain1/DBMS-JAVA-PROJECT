@@ -1,0 +1,7 @@
+com\example\govrecords\GovRecordsApplication.class
+com\example\govrecords\service\CitizenService.class
+com\example\govrecords\util\EncryptionUtil.class
+com\example\govrecords\controller\CitizenController.class
+com\example\govrecords\dto\CitizenDto.class
+com\example\govrecords\model\Citizen.class
+com\example\govrecords\repository\CitizenRepository.class

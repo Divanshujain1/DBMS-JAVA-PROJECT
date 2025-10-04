@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Register Citizen - Gov Records</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="card">
+    <h1>Register Citizen</h1>
+    <form th:action="@{/register}" th:object="${citizenDto}" method="post">
+      <label>Full name</label>
+      <input type="text" th:field="*{fullName}" />
+      <label>PAN (e.g. ABCDE1234F)</label>
+      <input type="text" th:field="*{pan}" />
+      <label>Aadhaar (12 digits)</label>
+      <input type="text" th:field="*{aadhaar}" />
+      <div><button type="submit">Register</button></div>
+    </form>
+    <div><a href="/citizens">View all citizens</a></div>
+  </div>
+</body>
+</html>
