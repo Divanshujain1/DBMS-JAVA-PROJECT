@@ -1,25 +1,52 @@
-<!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>Citizens</title>
-  <link rel="stylesheet" href="/styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Citizens | Government of India</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
-  <div class="card">
-    <h1>Citizens</h1>
-    <table>
-      <thead><tr><th>ID</th><th>Name</th><th>PAN (masked)</th><th>Aadhaar (masked)</th></tr></thead>
-      <tbody>
-        <tr th:each="c : ${citizens}">
-          <td th:text="${c.id}">1</td>
-          <td th:text="${c.fullName}">John</td>
-          <td th:text="${c.panMasked}">****1234</td>
-          <td th:text="${c.aadhaarMasked}">****1234</td>
-        </tr>
-      </tbody>
-    </table>
-    <div><a href="/">Add another</a></div>
-  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="flag-bar"></div>
+    <h1>Government of India - Citizen Database</h1>
+  </header>
+
+  <!-- Main Section -->
+  <main class="container">
+    <div class="table-card">
+      <h2>Registered Citizens</h2>
+
+      <table class="gov-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>PAN (Masked)</th>
+            <th>Aadhaar (Masked)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="c : ${citizens}">
+            <td th:text="${c.id}">1</td>
+            <td th:text="${c.fullName}">John Doe</td>
+            <td th:text="${c.panMasked}">****1234</td>
+            <td th:text="${c.aadhaarMasked}">****5678</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="link-box">
+        <a href="/" class="btn-secondary">Register Another Citizen</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Government of India | Digital Governance Initiative</p>
+  </footer>
 </body>
 </html>
