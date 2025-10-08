@@ -11,11 +11,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CitizenService {
+public class CitizenService  {
+
     @Autowired
     private CitizenRepository repo;
 
     public Citizen save(CitizenDto dto) throws Exception {
+        if (dto.getPan().length() != 10 || dto.getAadhaar().length() != 12) {
+            throw new IllegalArgumentException("PAN or Aadhaar length invalid");
+        }
         String panEnc = EncryptionUtil.encrypt(dto.getPan());
         String aadhaarEnc = EncryptionUtil.encrypt(dto.getAadhaar());
         Citizen c = new Citizen(dto.getFullName(), panEnc, aadhaarEnc);
@@ -30,3 +34,4 @@ public class CitizenService {
         return repo.findById(id);
     }
 }
+//Nju+fulgNI5vlcc4SfIHJVMFB3sQuwRDCIlfmMoPfag=
